@@ -52,7 +52,7 @@ export default function Root() {
         <h2 className="form-title">REGISTRO SILVER SELECTIONS VOL. 2</h2>
 
         <div className="form-group">
-          <label htmlFor="nombre">nombre*</label>
+          <label htmlFor="nombre">Nombre*</label>
           <input
             id="nombre"
             type="text"
@@ -62,7 +62,7 @@ export default function Root() {
         </div>
 
         <div className="form-group">
-          <label htmlFor="documento">documento*</label>
+          <label htmlFor="documento">Documento*</label>
           <input
             id="documento"
             type="text"
@@ -72,7 +72,7 @@ export default function Root() {
         </div>
 
         <div className="form-group">
-          <label htmlFor="telefono">tel�fono*</label>
+          <label htmlFor="telefono">Teléfono*</label>
           <input
             id="telefono"
             type="tel"
@@ -82,7 +82,7 @@ export default function Root() {
         </div>
 
         <div className="form-group">
-          <label htmlFor="correo">correo electr�nico</label>
+          <label htmlFor="correo">Correo electrónico</label>
           <input
             id="correo"
             type="email"
@@ -91,10 +91,10 @@ export default function Root() {
           />
         </div>
 
-        {/* Checkbox de autorizaci�n */}
+        {/* Checkbox de autorización */}
         <div className="authorization-box">
           <p className="authorization-text">
-            �Nos autorizas a enviar informaci�n de eventos, promociones,
+            ¿Nos autorizas a enviar información de eventos, promociones,
             descuentos y publicidades FADER KINGZ a los contactos
             proporcionados?
           </p>
@@ -105,8 +105,9 @@ export default function Root() {
                 value="true"
                 {...register("autorizacion")}
                 className="radio-input"
+                defaultChecked
               />
-              s�
+              Sí
             </label>
             <label className="radio-label">
               <input
@@ -115,19 +116,8 @@ export default function Root() {
                 {...register("autorizacion")}
                 className="radio-input"
               />
-              no
+              No
             </label>
-          </div>
-        </div>
-
-        {/* Video preview */}
-        <div className="video-section">
-          <h3 className="video-title">Checkea nuestro �ltimo lanzamiento:</h3>
-          <div className="video-placeholder">
-            <div className="video-frame">
-              <span className="video-text">CYPHER</span>
-              <span className="video-subtitle">SILVER SELECTIONS</span>
-            </div>
           </div>
         </div>
 
@@ -135,6 +125,17 @@ export default function Root() {
           ENVIAR
         </button>
       </form>
+
+      {/* Video preview */}
+      <div className="video-section">
+        <h3 className="video-title">Checkea nuestro último lanzamiento:</h3>
+        <div className="video-placeholder">
+          <div className="video-frame">
+            <span className="video-text">CYPHER</span>
+            <span className="video-subtitle">SILVER SELECTIONS</span>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
