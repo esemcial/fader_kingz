@@ -4,6 +4,8 @@ import { useForm } from "react-hook-form";
 import { FaInstagram, FaYoutube, FaPlay } from "react-icons/fa";
 
 import config from "@/config";
+import { Toaster, toaster } from "@/components/ui/toaster";
+
 import "./root.css";
 
 interface FormData {
@@ -44,11 +46,23 @@ export default function Root() {
       const resultado = await respuesta.json();
 
       if (resultado.status === "success") {
-        alert("¡Registro exitoso!");
+        toaster.create({
+          title: "¡Registro exitoso!",
+          description:
+            "Te esperamos en el evento con toda la actitud FADER KINGZ",
+          type: "success",
+          duration: 5000,
+        });
         reset();
       }
     } catch (error) {
-      alert("Error al enviar: " + error);
+      toaster.create({
+        title: "Error al registrar",
+        description:
+          "Hubo un problema al enviar tu registro. Por favor, intenta de nuevo.",
+        type: "error",
+        duration: 5000,
+      });
     } finally {
       setIsLoading(false);
     }
@@ -56,6 +70,7 @@ export default function Root() {
 
   return (
     <div className="root-container">
+      <Toaster />
       {/* Logo y redes sociales */}
       <div className="header">
         <img
